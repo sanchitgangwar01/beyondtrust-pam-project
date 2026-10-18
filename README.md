@@ -30,20 +30,20 @@ Design an end-to-end Privileged Access Management (PAM) model for a small hybrid
 ## 4. High-Level Workflow
 ```mermaid
 flowchart LR
-    A[Discovery scan<br/>AD / network / cloud] --> B[Triage & classify<br/>owner, tier, criticality]
-    B --> C[Onboard as Managed System<br/>+ Managed Account]
-    C --> D[Smart Rules assign<br/>accounts to Smart Groups]
-    D --> E[Vault credential<br/>+ set rotation policy]
-    E --> F{User requests access}
-    F --> G[Access Policy check<br/>role, time, asset tier]
-    G -->|Low risk| H[Auto-approve<br/>time-bound]
-    G -->|High risk| I[Approver reviews<br/>justification + ticket]
-    I -->|Approved| H
-    I -->|Denied| J[Request closed + logged]
-    H --> K[Credential released<br/>session proxied & recorded]
-    K --> L[Check-in / timeout]
-    L --> M[Password auto-rotated]
-    M --> N[Audit log + evidence<br/>reviewed periodically]
+    A["Discovery scan<br/>AD, network, cloud"] --> B["Triage and classify<br/>owner, tier, criticality"]
+    B --> C["Onboard Managed System<br/>and Managed Account"]
+    C --> D["Smart Rules assign accounts<br/>to Smart Groups"]
+    D --> E["Vault credential<br/>and set rotation policy"]
+    E --> F{"User requests access"}
+    F --> G["Access Policy check<br/>role, time, asset tier"]
+    G -->|"Low risk"| H["Auto-approve<br/>time-bound"]
+    G -->|"High risk"| I["Approver reviews<br/>justification and ticket"]
+    I -->|"Approved"| H
+    I -->|"Denied"| J["Request closed and logged"]
+    H --> K["Credential released<br/>session proxied and recorded"]
+    K --> L["Check-in or timeout"]
+    L --> M["Password auto-rotated"]
+    M --> N["Audit log and evidence<br/>reviewed periodically"]
 ```
 
 ## 5. Deliverables
